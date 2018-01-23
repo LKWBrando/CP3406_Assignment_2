@@ -14,13 +14,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonPressed(View view){
-        Intent goToPlay = new Intent(this, PlayActivity.class);
+        Intent goToSelectTopic = new Intent(this, SelectTopicActivity.class);
         Intent goToInstructions = new Intent(this, InstructionsActivity.class);
         Intent goToHighscores = new Intent(this, HighScoreActivity.class);
         Intent goToSettings = new Intent(this, SettingsActivity.class);
         switch(view.getId()){
             case R.id.playButton:
-                startActivity(goToPlay);
+                startActivity(goToSelectTopic);
                 break;
             case R.id.instructionsButton:
                 startActivity(goToInstructions);

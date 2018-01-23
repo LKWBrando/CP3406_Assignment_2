@@ -1,92 +1,66 @@
 package example.assignmentone.cp3406.cp3406_assignment_2;
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.text.DecimalFormat;
 
 public class PlayActivity extends AppCompatActivity implements SensorEventListener {
-    private float eventX=0.00f;
-    private float xPos=0.00f;
-    private float maxHeight=0.00f,minHeight=0.00f,midHeight=0.00f;
-    private float maxWidth=0.00f,minWidth=0.00f,midWidth=0.00f;
-    private int displayHeight,displayWidth;
-
-    private DisplayInvisibleBubble displayInvisibleBubble;
     private SensorManager sensorManager;
-    private LinearLayout invisiblePlayBg;
-    private TextView questionView;
-    private DecimalFormat df = new DecimalFormat("#.00");
+    private TextView questionView, questionNumber, countdownTimer;
+    private SharedPreferences gameSettings; //SharedPreferences of the whole application.
+    private CountDownTimer timer; //CountDownTimer object to keep track of time given for each question.
 
-    private int questionCount = 1;
+    private float eventX=0.00f; //Variable eventX used to determine if the phone is being tilted along the x-axis.
+    private DecimalFormat df; //Used to ensure that raw x-axis values are limited to two decimals.
+
+    private int questionCount = 1; //Keeping track of the number of questions.
+    private long currentTimeScore = 0; //Variable that take the summation of time left on the CountDownTimer if the user chooses the correct answer.
+    private long remainingTime; //Variable that takes the long value of the time left on the CountDownTimer.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
-
-        displayInvisibleBubble = new DisplayInvisibleBubble(this);
-
-        invisiblePlayBg = findViewById(R.id.invisBubbleBg);
-        invisiblePlayBg.addView(displayInvisibleBubble);
-
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-
         questionView = findViewById(R.id.questionView);
+        questionNumber = findViewById(R.id.questionNumber);
+        countdownTimer = findViewById(R.id.countdownTimer);
+        gameSettings = getSharedPreferences("GameSettings", MODE_PRIVATE);
 
-    }
+        questionCount = gameSettings.getInt("QuestionCount", questionCount);
+        currentTimeScore = gameSettings.getLong("timeScore", 0);
 
-    @Override
-    public void onWindowFocusChanged(boolean focus){
-        displayHeight= displayInvisibleBubble.getHeight();
-        displayWidth= displayInvisibleBubble.getWidth();
+        questionView.setText(Long.toString(currentTimeScore)); //testing
 
-        //Setting height boundaries
-        minHeight= (float)0.15*displayHeight;
-        maxHeight=(float)0.85*displayHeight;
-        midHeight=(float)0.5*displayHeight;
+        timer = new CountDownTimer(15000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                countdownTimer.setText("Seconds remaining: " + millisUntilFinished / 1000);
+                remainingTime = millisUntilFinished;
+            }
 
-        //Setting width boundaries
-        minWidth= (float)0.15*displayWidth;
-        maxWidth=(float)0.85*displayWidth;
-        midWidth=(float)0.5*displayWidth;
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        eventX=event.values[0];
-
-        df = new DecimalFormat("#.00");
-        String xStringValue = df.format(eventX); //Parsing to String with 2 decimal places
-
-        eventX = Float.parseFloat(xStringValue); //X coords limited to 2 decimal places
-
-        xPos = getXPosition(eventX, maxWidth, minWidth, midWidth);
-
-        displayInvisibleBubble.getBubble().setX((int)xPos); //Draw Bubble
-
-        if(eventX<=-9.81 || eventX>9.81){
-            questionView.setText("Changed");
-            questionCount += 1;
-        }
+            public void onFinish() {
+                questionCount += 1;
+                gameSettings.edit().putInt("QuestionCount", questionCount).apply();
+                Intent nextQuestion = new Intent(PlayActivity.this, PlayActivity.class);
+                finish();
+                startActivity(nextQuestion);
+            }
+        }.start();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_FASTEST);
+        questionNumber.setText(Integer.toString(questionCount));
     }
 
     @Override
@@ -98,48 +72,37 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onPause() {
         super.onPause();
-        sensorManager.unregisterListener(this);
+        sensorManager.unregisterListener(this); //Stop listener on pause.
     }
 
-
-    public static float getXPosition(float eventX, float maxWidth, float minWidth, float midWidth){ //get new X coords
-        float xPos = 0.00f;
-        if(eventX<=-9.81){
-            xPos=maxWidth;
-        }else if(eventX>9.81){
-            xPos=minWidth;
-        }else if(eventX<0){
-            xPos=midWidth+((0-eventX)/(float)9.81*(midWidth-minWidth));
-        }else if(eventX>0){
-            xPos=midWidth+((0-eventX)/(float)9.81*(maxWidth-midWidth));
-        }else if(eventX==0){
-            xPos=midWidth;
-        }
-        return xPos;
+    @Override
+    protected void onStop() {
+        super.onStop();
+        sensorManager.unregisterListener(this); //Stop listener on stop.
     }
-    /*if (gyroscopeSensor == null) {
-            Toast.makeText(this, "This device has no gyroscope!", Toast.LENGTH_SHORT).show();
-        }
 
-    gyroscopeEventListener = new SensorEventListener() { //Acceleration force along the z axis (including gravity).
-        @Override
-        public void onSensorChanged(SensorEvent sensorEvent) {
-            if (sensorEvent.values[2] > 1) {
-                skipQuestion();
-                //getWindow().getDecorView().setBackgroundColor(Color.BLUE);
-            } else if(sensorEvent.values[2] < -1){
-                skipQuestion();
-                //getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
-            }
-            else{
-                questionView.setText("Center");
-                //getWindow().getDecorView().setBackgroundColor(Color.WHITE);
-            }
-        }
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        Intent refreshQuestion = new Intent(this, PlayActivity.class);
+        eventX=event.values[0]; //Get current x-axis value
+        df = new DecimalFormat("#.00");
+        String xStringValue = df.format(eventX); //Parsing to String with 2 decimal places
+        eventX = Float.parseFloat(xStringValue); //X coords limited to 2 decimal places
 
-        @Override
-        public void onAccuracyChanged(Sensor sensor, int i) {
+        if(eventX<-9.81 || eventX>9.81){ //If device is tilted to the left or right, along the x-axis, go to next question
+            questionCount += 1;
+            gameSettings.edit().putInt("QuestionCount", questionCount).apply(); //Adding one to question count
 
+            currentTimeScore += remainingTime;
+            gameSettings.edit().putLong("timeScore", currentTimeScore).apply(); //Test
+
+            sensorManager.unregisterListener(this); //Stop listener
+            timer.cancel(); //Stop timer
+            startActivity(refreshQuestion); //Restart Activity with next question
         }
-    };*/
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    }
 }
