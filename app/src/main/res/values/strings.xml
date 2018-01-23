@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">CP3406_Assignment_2</string>
-    <string name="sampleText">Sample Text Sample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample
-        TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample
-        TextSample TextSample TextSample TextSample TextSample TextSample TextSample Text</string>
+    <string name="sampleText">Welcome to the Quick Science App!
+        \nThe purpose of this application is to help you, the user, to learn about the various facts of the different aspects in the field of Science.
+        \nYou will be given a timed quiz of your selected topic, where you can also select the time given and number of questions.
+        \nYou will be scored according to whether you have selected the correct answer, and how long it took you to do so. Wrong answers will cost you some points as well
+        \nThere is also an option to skip the question by simply tilting your device to the left or right. Doing so removes some points as well, and you will be given another question to attempt.
+        \nComplete the quiz by answering all the selected number of questions, and be scored accordingly. If you do well enough, you can even enter the highscores table!</string>
 </resources>

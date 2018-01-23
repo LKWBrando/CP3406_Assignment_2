@@ -25,6 +25,9 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     private long currentTimeScore = 0; //Variable that take the summation of time left on the CountDownTimer if the user chooses the correct answer.
     private long remainingTime; //Variable that takes the long value of the time left on the CountDownTimer.
 
+    private long gameTime;
+    private String gameTopic;
+    private int numberOfQuestions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,11 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
 
         questionView.setText(Long.toString(currentTimeScore)); //testing
 
-        timer = new CountDownTimer(15000, 1000) {
+        gameTime = gameSettings.getLong("timeLimit", 21000);
+        gameTopic = gameSettings.getString("gameSubject", null);
+        numberOfQuestions = gameSettings.getInt("numberOfQuestions", 10);
+
+        timer = new CountDownTimer(gameTime, 1000) {
             public void onTick(long millisUntilFinished) {
                 countdownTimer.setText("Seconds remaining: " + millisUntilFinished / 1000);
                 remainingTime = millisUntilFinished;
@@ -76,12 +83,6 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        sensorManager.unregisterListener(this); //Stop listener on stop.
-    }
-
-    @Override
     public void onSensorChanged(SensorEvent event) {
         Intent refreshQuestion = new Intent(this, PlayActivity.class);
         eventX=event.values[0]; //Get current x-axis value
@@ -89,7 +90,9 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
         String xStringValue = df.format(eventX); //Parsing to String with 2 decimal places
         eventX = Float.parseFloat(xStringValue); //X coords limited to 2 decimal places
 
-        if(eventX<-9.81 || eventX>9.81){ //If device is tilted to the left or right, along the x-axis, go to next question
+        if((eventX<-9.81 || eventX>9.81) && (remainingTime < (gameTime - 1000))){
+            //If device is tilted to the left or right, along the x-axis, go to next question.
+            //(gameTime - 1000) to allow for one second delay, so as to avoid multiple continued instances of eventX >9.81 or <-9.81 as user returns phone to upright position
             questionCount += 1;
             gameSettings.edit().putInt("QuestionCount", questionCount).apply(); //Adding one to question count
 
@@ -98,7 +101,7 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
 
             sensorManager.unregisterListener(this); //Stop listener
             timer.cancel(); //Stop timer
-            startActivity(refreshQuestion); //Restart Activity with next question
+            startActivity(refreshQuestion); //Resr
         }
     }
 

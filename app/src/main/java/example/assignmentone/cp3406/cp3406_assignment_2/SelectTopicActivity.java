@@ -9,7 +9,6 @@ import android.view.View;
 public class SelectTopicActivity extends AppCompatActivity {
     private SharedPreferences gameSettings;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,19 +17,19 @@ public class SelectTopicActivity extends AppCompatActivity {
     }
 
     public void buttonPressed(View view){
-        Intent goToPlay = new Intent(this, PlayActivity.class);
+        Intent goToPlay = new Intent(this, PreGameActivity.class);
         Intent goToMenu = new Intent(this, MainActivity.class);
         switch(view.getId()){
             case R.id.subjectBiology:
-                gameSettings.edit().putString("gameSubject", "biology");
+                gameSettings.edit().putString("gameSubject", "Biology").apply();
                 startActivity(goToPlay);
                 break;
             case R.id.subjectChemistry:
-                gameSettings.edit().putString("gameSubject", "chemistry");
+                gameSettings.edit().putString("gameSubject", "Chemistry").apply();
                 startActivity(goToPlay);
                 break;
             case R.id.subjectPhysics:
-                gameSettings.edit().putString("gameSubject", "physics");
+                gameSettings.edit().putString("gameSubject", "Physics").apply();
                 startActivity(goToPlay);
                 break;
             case R.id.returnToMenu:

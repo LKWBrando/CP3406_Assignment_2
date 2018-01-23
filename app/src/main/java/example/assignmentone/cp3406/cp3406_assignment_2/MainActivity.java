@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         Intent goToSelectTopic = new Intent(this, SelectTopicActivity.class);
         Intent goToInstructions = new Intent(this, InstructionsActivity.class);
         Intent goToHighscores = new Intent(this, HighScoreActivity.class);
-        Intent goToSettings = new Intent(this, SettingsActivity.class);
         switch(view.getId()){
             case R.id.playButton:
                 startActivity(goToSelectTopic);
@@ -27,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.highScoreButton:
                 startActivity(goToHighscores);
-                break;
-            case R.id.settingsButton:
-                startActivity(goToSettings);
                 break;
         }
     }

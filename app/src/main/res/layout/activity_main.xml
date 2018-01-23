@@ -12,47 +12,37 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quick Science"
         android:textSize="36dp"
         android:textStyle="italic"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_weight="6"/>
+        android:layout_weight="6"
+        android:text="Quick Science"/>
 
     <Button
         android:id="@+id/playButton"
         android:layout_width="200dp"
         android:layout_height="25dp"
-        android:text="Play"
-        android:onClick="buttonPressed"
         android:layout_gravity="center"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:onClick="buttonPressed"
+        android:text="Play"/>
 
     <Button
         android:id="@+id/instructionsButton"
         android:layout_width="200dp"
         android:layout_height="25dp"
-        android:text="Instructions"
-        android:onClick="buttonPressed"
         android:layout_gravity="center"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:onClick="buttonPressed"
+        android:text="Instructions"/>
 
     <Button
         android:id="@+id/highScoreButton"
         android:layout_width="200dp"
         android:layout_height="25dp"
-        android:text="High Scores"
-        android:onClick="buttonPressed"
         android:layout_gravity="center"
-        android:layout_weight="1"/>
-
-    <Button
-        android:id="@+id/settingsButton"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:text="Settings"
+        android:layout_weight="1"
         android:onClick="buttonPressed"
-        android:layout_gravity="center"
-        android:layout_weight="1"/>
-
+        android:text="High Scores"/>
 </LinearLayout>

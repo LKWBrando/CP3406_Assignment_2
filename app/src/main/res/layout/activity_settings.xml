@@ -5,61 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginLeft="7dp"
+    android:weightSum="7"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.SettingsActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of Questions"/>
+        android:text="Number of Questions"
+        android:gravity="center"
+        android:layout_weight="1"/>
 
     <RadioGroup
+        android:id="@+id/questionsRgroup"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity=""
+        android:layout_weight="2">
 
         <RadioButton
+            android:id="@+id/tenQuestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioButtonPressed"
             android:text="10 Questions"/>
 
         <RadioButton
+            android:id="@+id/fifteenQuestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioButtonPressed"
             android:text="15 Questions"/>
 
         <RadioButton
+            android:id="@+id/twentyQuestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioButtonPressed"
             android:text="20 Questions"/>
     </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time Limit"/>
+        android:text="Time Limit"
+        android:gravity="center"
+        android:layout_weight="1"/>
 
     <RadioGroup
+        android:id="@+id/timeRgroup"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
 
         <RadioButton
+            android:id="@+id/learningLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioButtonPressed"
             android:text="Learning (No Time Limit) [High-Scores Disabled]"/>
 
         <RadioButton
+            android:id="@+id/thirtyLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioButtonPressed"
             android:text="Easy (30 Seconds)"/>
 
         <RadioButton
+            android:id="@+id/twentyLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioButtonPressed"
             android:text="Medium (20 Seconds)"/>
 
         <RadioButton
+            android:id="@+id/tenLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="radioButtonPressed"
             android:text="Challenging (10 Seconds)"/>
     </RadioGroup>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonPressed"
+        android:layout_gravity="center"
+        android:text="Back"
+        android:layout_weight="1"/>
 </LinearLayout>

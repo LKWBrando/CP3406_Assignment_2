@@ -22,7 +22,8 @@
         <activity android:name=".PlayActivity" />
         <activity android:name=".InstructionsActivity" />
         <activity android:name=".HighScoreActivity" />
-        <activity android:name=".SelectTopicActivity"></activity>
+        <activity android:name=".SelectTopicActivity" />
+        <activity android:name=".PreGameActivity"></activity>
     </application>
 
 </manifest>
