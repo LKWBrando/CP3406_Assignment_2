@@ -12,6 +12,8 @@ public class PreGameActivity extends AppCompatActivity {
     private TextView timeInput;
     private TextView qNumInput;
     private TextView topicInput;
+    private TextView allowedSkip;
+    private int skippedQuestionCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,20 @@ public class PreGameActivity extends AppCompatActivity {
         qNumInput.setText(Integer.toString(gameSettings.getInt("numberOfQuestions", 10)));
         topicInput.setText(gameSettings.getString("gameSubject", null));
 
-        gameSettings.edit().putInt("QuestionCount", 1).apply();
+        if(gameSettings.getInt("numberOfQuestions", 10) == 10){
+            skippedQuestionCount = 2;
+        }
+        else if(gameSettings.getInt("numberOfQuestions", 10) == 15){
+            skippedQuestionCount = 3;
+        }
+        else{
+            skippedQuestionCount = 4;
+        }
+
+        gameSettings.edit().putInt("skippedQuestionCount", skippedQuestionCount).apply(); //Storing number of skipped questions allowed
+        gameSettings.edit().putInt("QuestionCount", 1).apply(); //Resetting Stored preferences
         gameSettings.edit().putLong("timeScore", 0).apply();
+        gameSettings.edit().putInt("gameSkippedQuestionCount", 0).apply();
 
     }
 

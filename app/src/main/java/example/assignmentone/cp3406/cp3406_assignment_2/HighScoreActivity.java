@@ -7,10 +7,13 @@ import android.view.View;
 
 public class HighScoreActivity extends AppCompatActivity {
 
+    private HighScoresDB highScoreDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score);
+        highScoreDB = new HighScoresDB(this);
     }
 
     public void buttonPressed(View view){
