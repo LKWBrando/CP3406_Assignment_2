@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#262626"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.EndGameActivity">
 
     <TextView
@@ -13,6 +14,8 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#ba2d0b"
         android:text="Results"/>
 
     <LinearLayout
@@ -28,6 +31,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#ba2d0b"
             android:text="Number of Answers right" />
 
         <TextView
@@ -36,6 +40,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#f5853f"
             android:text="Display Number"/>
 
     </LinearLayout>
@@ -53,6 +58,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#ba2d0b"
             android:text="Number of Skips used"/>
 
         <TextView
@@ -61,6 +67,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#f5853f"
             android:text="Display Skips"/>
     </LinearLayout>
 
@@ -77,6 +84,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#ba2d0b"
             android:text="Final Score"/>
 
         <TextView
@@ -85,6 +93,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#f5853f"
             android:text="Display Score"/>
     </LinearLayout>
 
@@ -96,6 +105,7 @@
         android:gravity="center"
         android:layout_weight="1"
         android:inputType="text"
+        android:background="#a5cbc3"
         android:hint="Enter a name and save your score!"/>
 
     <Button
@@ -105,6 +115,9 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_weight="1"
+        android:background="#931621"
+        android:textColor="#eff1f3"
+        android:layout_marginTop="10dp"
         android:onClick="buttonPressed"
         android:text="Save Score!"/>
 
@@ -121,6 +134,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#931621"
+            android:textColor="#eff1f3"
             android:onClick="buttonPressed"
             android:text="Pass"/>
 
