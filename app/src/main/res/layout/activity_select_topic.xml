@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
+    android:background="#262626"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.SelectTopicActivity">
 
     <TextView
@@ -13,32 +14,43 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_weight="1"
+        android:textSize="30dp"
+        android:textColor="#ba2d0b"
         android:text="Select a topic!"/>
 
     <Button
         android:id="@+id/subjectBiology"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
+        android:background="#172a3a"
+        android:textColor="#eff1f3"
+        android:layout_marginTop="5dp"
         android:onClick="buttonPressed"
         android:text="Biology"/>
 
     <Button
         android:id="@+id/subjectChemistry"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
+        android:background="#003e1f"
+        android:textColor="#eff1f3"
+        android:layout_marginTop="5dp"
         android:onClick="buttonPressed"
-        android:text="Organic Chemistry"/>
+        android:text="Chemistry"/>
 
     <Button
         android:id="@+id/subjectPhysics"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
+        android:background="#412234"
+        android:textColor="#eff1f3"
+        android:layout_marginTop="5dp"
         android:onClick="buttonPressed"
         android:text="Physics"/>
 
@@ -47,14 +59,17 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_weight="4"
-        android:text="More to come!"/>
+        android:textColor="#f5853f"
+        android:text="More topics will be added soon!"/>
 
     <Button
         android:id="@+id/returnToMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_weight="1"
+        android:background="#931621"
+        android:textColor="#eff1f3"
         android:onClick="buttonPressed"
         android:text="Return to Menu"/>
 </LinearLayout>

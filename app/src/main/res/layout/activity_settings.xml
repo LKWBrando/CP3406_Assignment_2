@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="7dp"
     android:weightSum="7"
+    android:background="#262626"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.SettingsActivity">
 
     <TextView
@@ -14,35 +14,44 @@
         android:layout_height="wrap_content"
         android:text="Number of Questions"
         android:gravity="center"
+        android:textSize="24dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ba2d0b"
         android:layout_weight="1"/>
 
     <RadioGroup
         android:id="@+id/questionsRgroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity=""
+        android:layout_marginLeft="10dp"
         android:layout_weight="2">
+
+        <RadioButton
+            android:id="@+id/eightQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#f5853f"
+            android:buttonTint="#ffffff"
+            android:onClick="radioButtonPressed"
+            android:text="8 Questions"/>
 
         <RadioButton
             android:id="@+id/tenQuestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#f5853f"
+            android:buttonTint="#ffffff"
             android:onClick="radioButtonPressed"
             android:text="10 Questions"/>
 
         <RadioButton
-            android:id="@+id/fifteenQuestions"
+            android:id="@+id/twelveQuestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#f5853f"
+            android:buttonTint="#ffffff"
             android:onClick="radioButtonPressed"
-            android:text="15 Questions"/>
-
-        <RadioButton
-            android:id="@+id/twentyQuestions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="radioButtonPressed"
-            android:text="20 Questions"/>
+            android:text="12 Questions"/>
     </RadioGroup>
 
     <TextView
@@ -50,6 +59,9 @@
         android:layout_height="wrap_content"
         android:text="Time Limit"
         android:gravity="center"
+        android:textSize="24dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ba2d0b"
         android:layout_weight="1"/>
 
     <RadioGroup
@@ -62,6 +74,9 @@
             android:id="@+id/learningLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#f5853f"
+            android:buttonTint="#ffffff"
             android:onClick="radioButtonPressed"
             android:text="Learning (No Time Limit) [High-Scores Disabled]"/>
 
@@ -69,6 +84,9 @@
             android:id="@+id/thirtyLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#f5853f"
+            android:buttonTint="#ffffff"
             android:onClick="radioButtonPressed"
             android:text="Easy (30 Seconds)"/>
 
@@ -76,6 +94,9 @@
             android:id="@+id/twentyLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#f5853f"
+            android:buttonTint="#ffffff"
             android:onClick="radioButtonPressed"
             android:text="Medium (20 Seconds)"/>
 
@@ -83,15 +104,21 @@
             android:id="@+id/tenLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#f5853f"
+            android:buttonTint="#ffffff"
             android:onClick="radioButtonPressed"
             android:text="Challenging (10 Seconds)"/>
     </RadioGroup>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
         android:onClick="buttonPressed"
         android:layout_gravity="center"
+        android:background="#931621"
+        android:textColor="#eff1f3"
         android:text="Back"
+        android:layout_marginBottom="20dp"
         android:layout_weight="1"/>
 </LinearLayout>

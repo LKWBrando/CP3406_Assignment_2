@@ -6,4 +6,13 @@
         \nYou will be scored according to whether you have selected the correct answer, and how long it took you to do so. Wrong answers will cost you some points as well
         \nThere is also an option to skip the question by simply tilting your device to the left or right. Doing so removes some points as well, and you will be given another question to attempt.
         \nComplete the quiz by answering all the selected number of questions, and be scored accordingly. If you do well enough, you can even enter the highscores table!</string>
+
+    <string name="login_instructions">login_instructions</string>
+    <string name="twitter_callback">https://twitter.com/LKWBrandon</string>
+    <string name="twitter_consumer_key">WT50RDy6amydFe5qxPJ9wn21n</string>
+    <string name="twitter_consumer_secret"> 80PfZTKRemLuR78AfAXB1lAcLHsAlM96jHwNx8zKO0KpTEB7OC</string>
+    <string name="twitter_oauth_verifier">oauth_verifier</string>
+    <string name="hello">Hello</string>
+    <string name="share">Share</string>
+    <string name="share_instructions">share_instructions</string>
 </resources>

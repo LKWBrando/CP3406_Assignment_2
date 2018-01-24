@@ -39,14 +39,15 @@ public class EndGameActivity extends AppCompatActivity {
         highScoreDB = new HighScoresDB(this);
 
         timeScore = gameSettings.getLong("timeScore", 0);
-        numCorrectAns = gameSettings.getInt("NumCorrectAns", 0);
-        skipsUsed = gameSettings.getInt("SkipsUsed", 0);
+        numCorrectAns = gameSettings.getInt("numCorrectAns", 0);
+        skipsUsed = gameSettings.getInt("gameSkippedQuestionCount", 0);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         finalScore = calFinalScore(timeScore, numCorrectAns, skipsUsed);
+        gameSettings.edit().putInt("finalScore", finalScore).apply();
 
         displayCorrectQuestions.setText(Integer.toString(numCorrectAns));
         displaySkipsUsed.setText(Integer.toString(skipsUsed));

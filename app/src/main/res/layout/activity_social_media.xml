@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#262626"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.SocialMediaActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/login_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:text="Do you want to post your results to Twitter?"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ba2d0b"/>
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome_text"
+            android:background="#0080B4"
+            android:layout_margin="60dp"
+            android:text="Yes! Click here to Post"
+            android:onClick="buttonPressed"
+            android:textColor="#fff"/>
+
+        <Button
+            android:id="@+id/passButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/shareButton"
+            android:background="#0080B4"
+            android:layout_margin="60dp"
+            android:text="No, I'll keep the score to myself"
+            android:onClick="buttonPressed"
+            android:textColor="#fff"/>
+    </RelativeLayout>
+
+</LinearLayout>

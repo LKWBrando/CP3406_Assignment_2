@@ -5,57 +5,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="7"
-    android:layout_margin="5dp"
+    android:weightSum="8"
+    android:padding="5dp"
+    android:background="#262626"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.InstructionsActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="1"
+        android:padding="15dp"
+        android:textSize="30sp"
+        android:textColor="#ba2d0b"
+        android:text="How to play the game"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textColor="#f5853f"
+        android:padding="15dp"
         android:text="To start, select the topic that you want to be quizzed on."/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="1"
+        android:textColor="#f5853f"
+        android:padding="15dp"
+        android:text="You will be able to choose the time given per question, as well as the number of questions in the quiz"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textColor="#f5853f"
+        android:padding="15dp"
         android:text="For each question in the quiz, there is a time limit in which you have to pick an answer to the question."/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:text="You will be able to decide on the number of questions in the quiz, as well as the time given to answer them"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="1"
-        android:text="You will score points based on whether you pick the correct answer, and how quickly you have done so. If you perform well enough, your name will be added to the highscores table!"/>
+        android:textColor="#f5853f"
+        android:padding="15dp"
+        android:text="Score points when you pick the correct answer! The faster you answer correctly, the more points you get!"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="1"
-        android:text="You are able to skip a few questions, based on the total number of questions in the quiz. Simply tilt your phone to the left or right."/>
+        android:textColor="#f5853f"
+        android:padding="15dp"
+        android:text="Stuck? You will be able to skip a few questions (Based on number of questions.) \nSimply tilt your phone to the left or right."/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="1"
-        android:text="Skipping allows you to ignore the question, but lose points in the process, relative to how long it took you to decide to skip it."/>
+        android:textColor="#f5853f"
+        android:padding="15dp"
+        android:text="You will be able to save your score at the end, and even post it onto Twitter to show off to your friends!"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_gravity="center"
+        android:background="#931621"
+        android:textColor="#eff1f3"
         android:onClick="buttonPressed"
         android:text="Return to Main"/>
 </LinearLayout>

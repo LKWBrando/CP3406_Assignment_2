@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    android:layout_margin="7dp"
+    android:background="#262626"
+    android:padding="5dp"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.PreGameActivity">
 
     <LinearLayout
@@ -22,6 +23,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="#ba2d0b"
             android:text="Chosen Topic"/>
 
         <TextView
@@ -31,6 +34,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#f5853f"
             android:text="User Input"/>
     </LinearLayout>
 
@@ -46,6 +50,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="#ba2d0b"
             android:text="Number of Questions"/>
 
         <TextView
@@ -55,6 +61,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#f5853f"
             android:text="User Input"/>
     </LinearLayout>
 
@@ -70,6 +77,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="#ba2d0b"
             android:text="Time Limit"/>
 
         <TextView
@@ -79,6 +88,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#f5853f"
             android:text="User Input"/>
 
     </LinearLayout>
@@ -95,6 +105,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="#ba2d0b"
             android:text="Questions allowed to skip"/>
 
         <TextView
@@ -104,6 +116,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#f5853f"
             android:text="User Input"/>
 
     </LinearLayout>
@@ -126,6 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="#a5cbc3"
             android:text="Test your knowledge by answering \nall the questions correctly! \nTilt your screen to the left or right to skip the question"
             android:layout_weight="10"/>
 
@@ -143,8 +157,10 @@
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:layout_weight="4"
+        android:background="#ffffff"
+        android:textColor="#412234"
         android:onClick="buttonPressed"
-        android:text="Start!"/>
+        android:text="Start the Quiz!"/>
 
 
     <LinearLayout
@@ -157,18 +173,24 @@
 
         <Button
             android:id="@+id/menuButton"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="buttonPressed"
+            android:layout_marginRight="5dp"
+            android:background="#931621"
+            android:textColor="#eff1f3"
             android:text="Return to Menu"/>
 
         <Button
             android:id="@+id/settingsButton"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="buttonPressed"
+            android:layout_marginLeft="5dp"
+            android:background="#931621"
+            android:textColor="#eff1f3"
             android:text="Game Settings"/>
     </LinearLayout>
 </LinearLayout>
