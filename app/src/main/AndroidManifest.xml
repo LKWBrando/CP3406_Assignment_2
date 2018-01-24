@@ -24,7 +24,8 @@
         <activity android:name=".HighScoreActivity" />
         <activity android:name=".SelectTopicActivity" />
         <activity android:name=".PreGameActivity" />
-        <activity android:name=".EndGameActivity"></activity>
+        <activity android:name=".EndGameActivity" />
+        <activity android:name=".SocialMediaActivity"></activity>
     </application>
 
 </manifest>

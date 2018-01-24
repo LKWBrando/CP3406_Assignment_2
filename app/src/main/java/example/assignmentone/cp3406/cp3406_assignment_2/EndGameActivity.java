@@ -54,14 +54,10 @@ public class EndGameActivity extends AppCompatActivity {
     }
 
     public void buttonPressed(View view){
-        Intent goToMenu = new Intent(this, MainActivity.class);
+        Intent goToEndScreen = new Intent(this, SocialMediaActivity.class);
         switch (view.getId()){
-            case R.id.menuButton:
-                startActivity(goToMenu);
-                break;
-            case R.id.highScoreButton:
-                Intent goToHighscores = new Intent(this, HighScoreActivity.class);
-                startActivity(goToHighscores);
+            case R.id.passButton:
+                startActivity(goToEndScreen);
                 break;
             case R.id.saveButton:
                 if(inputName.getText().toString().equals("")){ //Error checking
@@ -72,7 +68,7 @@ public class EndGameActivity extends AppCompatActivity {
                     addScore(inputName.getText().toString(), finalScore);
                     Toast confirmation = Toast.makeText(this, "Name added!", Toast.LENGTH_SHORT);
                     confirmation.show();
-                    startActivity(goToMenu);
+                    startActivity(goToEndScreen);
                 }
                 break;
         }

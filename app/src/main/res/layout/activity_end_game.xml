@@ -96,7 +96,7 @@
         android:gravity="center"
         android:layout_weight="1"
         android:inputType="text"
-        android:text="Enter a name and save your score!"/>
+        android:hint="Enter a name and save your score!"/>
 
     <Button
         android:id="@+id/saveButton"
@@ -117,20 +117,13 @@
         android:layout_weight="1">
 
         <Button
-            android:id="@+id/menuButton"
+            android:id="@+id/passButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="buttonPressed"
-            android:text="Back to Menu"/>
+            android:text="Pass"/>
 
-        <Button
-            android:id="@+id/highScoreButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="buttonPressed"
-            android:text="High Scores"/>
     </LinearLayout>
 
 </LinearLayout>
