@@ -1,5 +1,5 @@
+//HighScoresDB Class created to extend from the SQLiteOpenHelper class, allowing the application to create and maintain a local SQL database
 package example.assignmentone.cp3406.cp3406_assignment_2;
-
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

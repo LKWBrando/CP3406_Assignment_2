@@ -1,3 +1,4 @@
+//MainActivity created as the introduction screen and main menu of the application
 package example.assignmentone.cp3406.cp3406_assignment_2;
 
 import android.content.Intent;

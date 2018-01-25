@@ -17,6 +17,7 @@
         android:orientation="horizontal"
         android:layout_weight="1">
 
+        <!--Display Sub text for chosen topic-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
             android:textColor="#ba2d0b"
             android:text="Chosen Topic"/>
 
+        <!--Display settings for chosen topic-->
         <TextView
             android:id="@+id/topicInput"
             android:layout_width="match_parent"
@@ -44,6 +46,7 @@
         android:orientation="horizontal"
         android:layout_weight="1">
 
+        <!--Display Sub text for number of questions-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,6 +57,7 @@
             android:textColor="#ba2d0b"
             android:text="Number of Questions"/>
 
+        <!--Display settings for number of questions-->
         <TextView
             android:id="@+id/qNumInput"
             android:layout_width="match_parent"
@@ -71,6 +75,7 @@
         android:orientation="horizontal"
         android:layout_weight="1">
 
+        <!--Display Sub text for time limit-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,6 +86,7 @@
             android:textColor="#ba2d0b"
             android:text="Time Limit"/>
 
+        <!--Display settings for time limit-->
         <TextView
             android:id="@+id/timeInput"
             android:layout_width="match_parent"
@@ -99,6 +105,7 @@
         android:orientation="horizontal"
         android:layout_weight="1">
 
+        <!--Display Sub text for number of skipped questions allowed-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -109,6 +116,7 @@
             android:textColor="#ba2d0b"
             android:text="Questions allowed to skip"/>
 
+        <!--Display settings for number of skipped questions allowed-->
         <TextView
             android:id="@+id/allowedSkip"
             android:layout_width="match_parent"
@@ -135,6 +143,7 @@
             android:layout_weight="1"
             app:srcCompat="@android:drawable/ic_menu_always_landscape_portrait" />
 
+        <!--Displaying information text-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -150,6 +159,7 @@
             app:srcCompat="@android:drawable/ic_menu_always_landscape_portrait" />
     </LinearLayout>
 
+    <!--Button to start the game process-->
     <Button
         android:id="@+id/playButton"
         android:layout_width="150dp"
@@ -162,7 +172,6 @@
         android:onClick="buttonPressed"
         android:text="Start the Quiz!"/>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -171,6 +180,7 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
+        <!--Button to return to the main menu-->
         <Button
             android:id="@+id/menuButton"
             android:layout_width="100dp"
@@ -182,6 +192,7 @@
             android:textColor="#eff1f3"
             android:text="Return to Menu"/>
 
+        <!--Button to go to the game settings-->
         <Button
             android:id="@+id/settingsButton"
             android:layout_width="100dp"

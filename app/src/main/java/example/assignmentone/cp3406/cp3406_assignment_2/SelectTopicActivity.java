@@ -1,3 +1,4 @@
+/*SelectTopicActivity is created to allow the user to choose from the list of topics available, and loads the questions accordingly*/
 package example.assignmentone.cp3406.cp3406_assignment_2;
 
 import android.content.Intent;
@@ -17,6 +18,7 @@ public class SelectTopicActivity extends AppCompatActivity {
     }
 
     public void buttonPressed(View view){
+        //On user's button press, change the topic of the quiz accordingly
         Intent goToPlay = new Intent(this, PreGameActivity.class);
         Intent goToMenu = new Intent(this, MainActivity.class);
         switch(view.getId()){

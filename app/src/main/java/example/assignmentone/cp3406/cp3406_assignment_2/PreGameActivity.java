@@ -1,3 +1,4 @@
+/*PreGameActivity was created to display the specifications of the game before it is run. User has the choice to alter the current setttings*/
 package example.assignmentone.cp3406.cp3406_assignment_2;
 
 import android.content.Intent;
@@ -34,6 +35,7 @@ public class PreGameActivity extends AppCompatActivity {
         listOfQuestions = new ArrayList<>();
         gameSettings = getSharedPreferences("GameSettings", MODE_PRIVATE);
 
+        //Check current selected topic
         switch(gameSettings.getString("gameSubject", "Biology")){
             case "Biology":
                 gameTopic = "bio";
@@ -46,10 +48,12 @@ public class PreGameActivity extends AppCompatActivity {
                 break;
         }
 
+        //Load all available questions headers from the arrays.xml, according to the selected topic
         for(int i=1; i<17; i++){
             listOfQuestions.add(gameTopic + "question" + i);
         }
         Collections.shuffle(listOfQuestions);
+        //Add question headers into a set, and adding to preferences
         setListOfQuestions = new HashSet<String>();
         setListOfQuestions.addAll(listOfQuestions);
         gameSettings.edit().putStringSet("listOfGameQuestions", setListOfQuestions).apply();
@@ -64,7 +68,6 @@ public class PreGameActivity extends AppCompatActivity {
         topicInput.setText(gameSettings.getString("gameSubject", null));
         allowedSkip.setText(Integer.toString(gameSettings.getInt("skippedQuestionCount", 2)));
 
-
         gameSettings.edit().putInt("QuestionCount", 1).apply(); //Resetting Stored preferences
         gameSettings.edit().putLong("timeScore", 0).apply();
         gameSettings.edit().putInt("gameSkippedQuestionCount", 0).apply();
@@ -77,13 +80,13 @@ public class PreGameActivity extends AppCompatActivity {
         Intent goToSettings = new Intent(this, SettingsActivity.class);
 
         switch (view.getId()){
-            case R.id.playButton:
+            case R.id.playButton: //Start the game
                 startActivity(goToPlay);
                 break;
-            case R.id.menuButton:
+            case R.id.menuButton: //Return to the main menu
                 startActivity(goToMenu);
                 break;
-            case R.id.settingsButton:
+            case R.id.settingsButton: //Go to the game settings
                 startActivity(goToSettings);
                 break;
         }

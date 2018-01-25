@@ -1,3 +1,4 @@
+/*PlayActivity houses the main activity of the game, the quiz. Users will proceed with the quiz according to the game settings chosen by them*/
 package example.assignmentone.cp3406.cp3406_assignment_2;
 
 import android.content.Intent;
@@ -13,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,33 +63,33 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
         buttonFour = findViewById(R.id.buttonFour);
         gameSettings = getSharedPreferences("GameSettings", MODE_PRIVATE); //Shared Preferences
 
+        //Getting the question headers from preferences
         initialSetOfQuestions = gameSettings.getStringSet("listOfGameQuestions", null);
+        //Reading the question headers into an arraylist
         Iterator<String> iter = initialSetOfQuestions.iterator();
         listOfQuestions = new ArrayList<>();
         while(iter.hasNext()){
             listOfQuestions.add(iter.next());
         }
-        Collections.shuffle(listOfQuestions);
-
-        String currentQuestion = listOfQuestions.get(0);
-        listOfQuestions.remove(0);
-        updatedSetOfQuestions = new HashSet<>();
+        Collections.shuffle(listOfQuestions); //Shuffling the questions to ensure a random question each time
+        String currentQuestion = listOfQuestions.get(0); //Read question header
+        listOfQuestions.remove(0); //Remove from ArrayList
+        updatedSetOfQuestions = new HashSet<>(); //Add remaining questions into a new Hashset
         updatedSetOfQuestions.addAll(listOfQuestions);
-        gameSettings.edit().putStringSet("listOfGameQuestions", updatedSetOfQuestions).apply();
+        gameSettings.edit().putStringSet("listOfGameQuestions", updatedSetOfQuestions).apply(); //Add new Hashset to the preferences
 
-        System.out.println(currentQuestion);
-
+        //Reading the details of the question based on the question header
         int getRes = getResources().getIdentifier(currentQuestion, "array", getPackageName());
         String[] currentQuestionDetails = getResources().getStringArray(getRes);
-        for(int i=0; i<5; i++){
-            System.out.println(currentQuestionDetails[i]);
-        }
 
-        questionView.setText(currentQuestionDetails[0]);
-        buttonOne.setText(currentQuestionDetails[1]);
-        buttonTwo.setText(currentQuestionDetails[2]);
-        buttonThree.setText(currentQuestionDetails[3]);
-        buttonFour.setText(currentQuestionDetails[4]);
+        questionView.setText(currentQuestionDetails[0]); //Setting question
+        buttonOne.setText(currentQuestionDetails[1]); //Setting question answer 1
+        buttonTwo.setText(currentQuestionDetails[2]); //Setting question answer 2
+        buttonThree.setText(currentQuestionDetails[3]); //Setting question answer 3
+        buttonFour.setText(currentQuestionDetails[4]); //Setting question answer 4 (Set to be correct for the purposes of testing
+
+        /*In future iterations of the application, a HashMap object will be created to introduce mapping of the questions to Boolean variables
+        * This allows the shuffling of the question answers to buttons, allowing for the random element as opposed to the current static method*/
 
         currentQuestionCount = gameSettings.getInt("QuestionCount", currentQuestionCount); //Getting the current question count as the game progresses, initialises at 1
         currentTimeScore = gameSettings.getLong("timeScore", 0); //Getting the combined time score, as per game mechanics
@@ -100,7 +100,7 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
         totalQuestionCount = gameSettings.getInt("totalQuestionCount", 10); //Getting the total number of questions in the game, as per user setting before game starts.
         gameTime = gameSettings.getLong("timeLimit", 21000); //Getting the time allowed per question, as per user setting before game starts
 
-
+        //CountDownTimer object to keep track of the time allowed per question
         timer = new CountDownTimer(gameTime, 1000) {
             public void onTick(long millisUntilFinished) {
                 countdownTimer.setText((millisUntilFinished / 1000) + " Seconds \nRemaining");
@@ -189,6 +189,7 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     }
 
     public void buttonPressed(View view){
+        //Method run when the user chooses an answer.
         Toast wrongAnswer = Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT);
         Toast correctAnswer = Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT);
         switch (view.getId()){

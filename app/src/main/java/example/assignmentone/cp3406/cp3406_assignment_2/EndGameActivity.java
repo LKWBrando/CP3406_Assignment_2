@@ -1,3 +1,4 @@
+//EndGameActivity created to display the end progress of the quiz, allowing the option for the user to store the result in the database
 package example.assignmentone.cp3406.cp3406_assignment_2;
 
 import android.content.ContentValues;
@@ -82,6 +83,7 @@ public class EndGameActivity extends AppCompatActivity {
     }
 
     public void addScore(String name, int score){
+        //Adding the score values into the database
         SQLiteDatabase db = highScoreDB.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--string-arrays that stores the question details
+Questions are repeated for the different topics; Main objective is to show that the values can be pulled from this xml file -->
+
 <resources>
+    <!--List of questions for the Biology Topic-->
     <string-array name="bioquestion1">
         <item>Which of the following statementes is true regarding anabolism?</item>
         <item>Anabolism uses the process of hydrolysis to join molecules together.</item>
@@ -113,12 +117,234 @@
         <item>Heat capacity</item>
         <item>Heat of vaporization</item>
     </string-array>
-    <string-array name="bioquestion17">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+
+    <!--List of questions for the Chemistry Topic-->
+    <string-array name="chemquestion1">
+        <item>Which of the following statementes is true regarding anabolism?</item>
+        <item>Anabolism uses the process of hydrolysis to join molecules together.</item>
+        <item>Anabolism is the sum of all the chemical reactions in a cell.</item>
+        <item>Energy is released during anabolic reactions.</item>
+        <item>In anabolism, larger molecules are made from smaller molecules.</item>
+    </string-array>
+    <string-array name="chemquestion2">
+        <item>A+B+energy⟶AB \n Which of the following best describes the above reaction?</item>
+        <item>It is a hydrolysis reaction.</item>
+        <item>It is a catabolic reaction.</item>
+        <item>It is an exergonic reaction.</item>
+        <item>It is an anabolic reaction.</item>
+    </string-array>
+    <string-array name="chemquestion3">
+        <item>Which statement is true regarding catabolic pathways?</item>
+        <item>Molecules are synthesized during using dehydration synthesis.</item>
+        <item>Catabolic reactions consume energy.</item>
+        <item>Catabolic pathways are used to construct macromolecules such as carbohydrates, lipids, and proteins</item>
+        <item>Polymers are broken down into their monomers.</item>
+    </string-array>
+    <string-array name="chemquestion4">
+        <item>What is the relationship between anabolic and catabolic pathways?</item>
+        <item>Anabolic and catabolic pathways are interchangeable.</item>
+        <item>Catabolic pathways synthesize complex molecules that are destroyed by anabolism.</item>
+        <item>Molecules broken down by anabolic pathways provides energy for catabolic pathways.</item>
+        <item>Anabolic pathways create complex molecules using the energy from catabolic pathways.</item>
+    </string-array>
+    <string-array name="chemquestion5">
+        <item>Which of the following molecules is used as "energy currency" for the cell?</item>
+        <item>Phosphate group</item>
+        <item>Water</item>
+        <item>ADP</item>
+        <item>ATP</item>
+    </string-array>
+    <string-array name="chemquestion6">
+        <item>Which of the following are components of adenosine triphosphate (ATP)?</item>
+        <item>Deoxyribose, a cytosine base, and a triphosphate group.</item>
+        <item>Deoxyribose, an adenine base, and a triphosphate group.</item>
+        <item>Ribose, a cytosine base, and a triphosphate group.</item>
+        <item>Ribose, an adenine base, and a triphosphate group.</item>
+    </string-array>
+    <string-array name="chemquestion7">
+        <item>What occurs when a phosphate-phosphate bond in an ATP molecule is broken? </item>
+        <item>Light energy is absorbed by chloroplasts.</item>
+        <item>Water is transported through the cell membrane.</item>
+        <item>Lysosomes release their contents into the cytoplasm.</item>
+        <item>Energy is released in a cell.</item>
+    </string-array>
+    <string-array name="chemquestion8">
+        <item>How is ATP hydrolysis used to power other cellular reactions?</item>
+        <item>It adds a phosphate to ADP.</item>
+        <item>It produces water which is used to fuel other reactions.</item>
+        <item>It acts as an enzymatic catalyst.</item>
+        <item>It is coupled with endergonic reactions.</item>
+    </string-array>
+    <string-array name="chemquestion9">
+        <item>Which of the following has the weakest bond strength?</item>
+        <item>Ionic bonds</item>
+        <item>Polar covalent bonds</item>
+        <item>Non-polar covalent</item>
+        <item>Hydrogen bonds</item>
+    </string-array>
+    <string-array name="chemquestion10">
+        <item>Why is water so effective at hydrogen bonding? </item>
+        <item>There are two hydrogens, doubling the positive charge on the water molecule.</item>
+        <item>Hydrogen is more electronegative than oxygen, so it is more likely to donate its elections to oxygen.
+        </item>
+        <item>The hydrogens in water are ionically bonded to the oxygen.</item>
+        <item>Oxygen is very electronegative and strongly attracts hydrogen’s election.</item>
+    </string-array>
+    <string-array name="chemquestion11">
+        <item>Which of the following explains why water is a good solvent for polar and ionic compounds? </item>
+        <item>Water is a non-coovalent molecule.</item>
+        <item>Water is a hydrophobic moledule.</item>
+        <item>Water is an ionic compound.</item>
+        <item>Water is a polar molecule.</item>
+    </string-array>
+    <string-array name="chemquestion12">
+        <item>Why is water unable to dissolve substances like oil? </item>
+        <item>Water is nonpolar and oil is polar.</item>
+        <item>Both water and oil are nonpolar.</item>
+        <item>Both water and oil are polar.</item>
+        <item>Water is polar and oil is nonpolar.</item>
+    </string-array>
+    <string-array name="chemquestion13">
+        <item>Which of the following statements is true regarding water as a substance? </item>
+        <item>Water is a non-polar solvent.</item>
+        <item>A water solution is also known as an aqueous solution.</item>
+        <item>All solutes dissolve easily in water.</item>
+        <item>Ionic substances are insoluble in water.</item>
+    </string-array>
+    <string-array name="chemquestion14">
+        <item>Which of the following scenarios is an example of cohesion? </item>
+        <item>Water molecules stick to the surface of a mirror.</item>
+        <item>Water sticks to the walls of blood vessels.</item>
+        <item>Water is attracted to the surface of the needle.</item>
+        <item>Water molecules stick to one another and form a bead.</item>
+    </string-array>
+    <string-array name="chemquestion15">
+        <item>Which of the following describes surface tension in water? </item>
+        <item>Surface tension occurs due to ionic bonding.</item>
+        <item>Surface tension is caused by water molecules repelling one another.</item>
+        <item>Surface tension of water is weakened by hydrogen bonding.</item>
+        <item>Surface tension allows water to support small objects if they are placed carefully on its surface.</item>
+    </string-array>
+    <string-array name="chemquestion16">
+        <item>Which property of water is directly responsible for lowering body heat with sweat? </item>
+        <item>Cohesion</item>
+        <item>Surface tension</item>
+        <item>Heat capacity</item>
+        <item>Heat of vaporization</item>
     </string-array>
 
+    <!--List of questions for the Physics Topic-->
+    <string-array name="physquestion1">
+        <item>Which of the following statementes is true regarding anabolism?</item>
+        <item>Anabolism uses the process of hydrolysis to join molecules together.</item>
+        <item>Anabolism is the sum of all the chemical reactions in a cell.</item>
+        <item>Energy is released during anabolic reactions.</item>
+        <item>In anabolism, larger molecules are made from smaller molecules.</item>
+    </string-array>
+    <string-array name="physquestion2">
+        <item>A+B+energy⟶AB \n Which of the following best describes the above reaction?</item>
+        <item>It is a hydrolysis reaction.</item>
+        <item>It is a catabolic reaction.</item>
+        <item>It is an exergonic reaction.</item>
+        <item>It is an anabolic reaction.</item>
+    </string-array>
+    <string-array name="physquestion3">
+        <item>Which statement is true regarding catabolic pathways?</item>
+        <item>Molecules are synthesized during using dehydration synthesis.</item>
+        <item>Catabolic reactions consume energy.</item>
+        <item>Catabolic pathways are used to construct macromolecules such as carbohydrates, lipids, and proteins</item>
+        <item>Polymers are broken down into their monomers.</item>
+    </string-array>
+    <string-array name="physquestion4">
+        <item>What is the relationship between anabolic and catabolic pathways?</item>
+        <item>Anabolic and catabolic pathways are interchangeable.</item>
+        <item>Catabolic pathways synthesize complex molecules that are destroyed by anabolism.</item>
+        <item>Molecules broken down by anabolic pathways provides energy for catabolic pathways.</item>
+        <item>Anabolic pathways create complex molecules using the energy from catabolic pathways.</item>
+    </string-array>
+    <string-array name="physquestion5">
+        <item>Which of the following molecules is used as "energy currency" for the cell?</item>
+        <item>Phosphate group</item>
+        <item>Water</item>
+        <item>ADP</item>
+        <item>ATP</item>
+    </string-array>
+    <string-array name="physquestion6">
+        <item>Which of the following are components of adenosine triphosphate (ATP)?</item>
+        <item>Deoxyribose, a cytosine base, and a triphosphate group.</item>
+        <item>Deoxyribose, an adenine base, and a triphosphate group.</item>
+        <item>Ribose, a cytosine base, and a triphosphate group.</item>
+        <item>Ribose, an adenine base, and a triphosphate group.</item>
+    </string-array>
+    <string-array name="physquestion7">
+        <item>What occurs when a phosphate-phosphate bond in an ATP molecule is broken? </item>
+        <item>Light energy is absorbed by chloroplasts.</item>
+        <item>Water is transported through the cell membrane.</item>
+        <item>Lysosomes release their contents into the cytoplasm.</item>
+        <item>Energy is released in a cell.</item>
+    </string-array>
+    <string-array name="physquestion8">
+        <item>How is ATP hydrolysis used to power other cellular reactions?</item>
+        <item>It adds a phosphate to ADP.</item>
+        <item>It produces water which is used to fuel other reactions.</item>
+        <item>It acts as an enzymatic catalyst.</item>
+        <item>It is coupled with endergonic reactions.</item>
+    </string-array>
+    <string-array name="physquestion9">
+        <item>Which of the following has the weakest bond strength?</item>
+        <item>Ionic bonds</item>
+        <item>Polar covalent bonds</item>
+        <item>Non-polar covalent</item>
+        <item>Hydrogen bonds</item>
+    </string-array>
+    <string-array name="physquestion10">
+        <item>Why is water so effective at hydrogen bonding? </item>
+        <item>There are two hydrogens, doubling the positive charge on the water molecule.</item>
+        <item>Hydrogen is more electronegative than oxygen, so it is more likely to donate its elections to oxygen.
+        </item>
+        <item>The hydrogens in water are ionically bonded to the oxygen.</item>
+        <item>Oxygen is very electronegative and strongly attracts hydrogen’s election.</item>
+    </string-array>
+    <string-array name="physquestion11">
+        <item>Which of the following explains why water is a good solvent for polar and ionic compounds? </item>
+        <item>Water is a non-coovalent molecule.</item>
+        <item>Water is a hydrophobic moledule.</item>
+        <item>Water is an ionic compound.</item>
+        <item>Water is a polar molecule.</item>
+    </string-array>
+    <string-array name="physquestion12">
+        <item>Why is water unable to dissolve substances like oil? </item>
+        <item>Water is nonpolar and oil is polar.</item>
+        <item>Both water and oil are nonpolar.</item>
+        <item>Both water and oil are polar.</item>
+        <item>Water is polar and oil is nonpolar.</item>
+    </string-array>
+    <string-array name="physquestion13">
+        <item>Which of the following statements is true regarding water as a substance? </item>
+        <item>Water is a non-polar solvent.</item>
+        <item>A water solution is also known as an aqueous solution.</item>
+        <item>All solutes dissolve easily in water.</item>
+        <item>Ionic substances are insoluble in water.</item>
+    </string-array>
+    <string-array name="physquestion14">
+        <item>Which of the following scenarios is an example of cohesion? </item>
+        <item>Water molecules stick to the surface of a mirror.</item>
+        <item>Water sticks to the walls of blood vessels.</item>
+        <item>Water is attracted to the surface of the needle.</item>
+        <item>Water molecules stick to one another and form a bead.</item>
+    </string-array>
+    <string-array name="physquestion15">
+        <item>Which of the following describes surface tension in water? </item>
+        <item>Surface tension occurs due to ionic bonding.</item>
+        <item>Surface tension is caused by water molecules repelling one another.</item>
+        <item>Surface tension of water is weakened by hydrogen bonding.</item>
+        <item>Surface tension allows water to support small objects if they are placed carefully on its surface.</item>
+    </string-array>
+    <string-array name="physquestion16">
+        <item>Which property of water is directly responsible for lowering body heat with sweat? </item>
+        <item>Cohesion</item>
+        <item>Surface tension</item>
+        <item>Heat capacity</item>
+        <item>Heat of vaporization</item>
+    </string-array>
 </resources>

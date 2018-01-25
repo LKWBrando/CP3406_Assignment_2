@@ -8,6 +8,7 @@
     android:background="#262626"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.EndGameActivity">
 
+    <!--Display Results header-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +27,7 @@
         android:gravity="center"
         android:layout_weight="1">
 
+        <!--Sub header for number of right answers-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,6 +36,7 @@
             android:textColor="#ba2d0b"
             android:text="Number of Answers right" />
 
+        <!--Display the number of right answers from the user-->
         <TextView
             android:id="@+id/displayCorrectQuestions"
             android:layout_width="match_parent"
@@ -53,6 +56,7 @@
         android:gravity="center"
         android:layout_weight="1">
 
+        <!--Sub header for number of skips used-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,6 +65,7 @@
             android:textColor="#ba2d0b"
             android:text="Number of Skips used"/>
 
+        <!--Display the number of skips used-->
         <TextView
             android:id="@+id/displaySkipsUsed"
             android:layout_width="match_parent"
@@ -79,6 +84,7 @@
         android:gravity="center"
         android:layout_weight="1">
 
+        <!--Sub header for final score-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,6 +93,7 @@
             android:textColor="#ba2d0b"
             android:text="Final Score"/>
 
+        <!--Display the final score-->
         <TextView
             android:id="@+id/displayFinalScore"
             android:layout_width="match_parent"
@@ -97,6 +104,7 @@
             android:text="Display Score"/>
     </LinearLayout>
 
+    <!--Edit text field to allow for user input into High scores-->
     <EditText
         android:id="@+id/inputName"
         android:layout_width="wrap_content"
@@ -108,6 +116,7 @@
         android:background="#a5cbc3"
         android:hint="Enter a name and save your score!"/>
 
+    <!--Button to save user input into the High scores-->
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
@@ -129,6 +138,7 @@
         android:gravity="center"
         android:layout_weight="1">
 
+        <!--Button to allow user to pass-->
         <Button
             android:id="@+id/passButton"
             android:layout_width="wrap_content"
@@ -138,7 +148,5 @@
             android:textColor="#eff1f3"
             android:onClick="buttonPressed"
             android:text="Pass"/>
-
     </LinearLayout>
-
 </LinearLayout>

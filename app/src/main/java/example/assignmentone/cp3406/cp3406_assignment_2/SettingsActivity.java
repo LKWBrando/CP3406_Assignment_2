@@ -1,3 +1,4 @@
+/*This activity is created to allow the user to set the details of the game, such as time allowed per questions and number of questions in total*/
 package example.assignmentone.cp3406.cp3406_assignment_2;
 
 import android.content.Intent;
@@ -41,6 +42,8 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        //IF/ELSE to check current settings, and check radio button accordingly
         if(gameSettings.getInt("numberOfQuestions", 8) == 8){
             questionsRgroup.check(eightQuestions.getId());
         }
@@ -51,6 +54,7 @@ public class SettingsActivity extends AppCompatActivity {
             questionsRgroup.check(twelveQuestions.getId());
         }
 
+        //IF/ELSE to check current settings, and check radio button accordingly
         if(gameSettings.getLong("timeLimit", 21000) == 0){
             timeRgroup.check(learningLimit.getId());
         }
@@ -66,6 +70,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void radioButtonPressed(View view){
+        //Setting game settings in preferences on radio button press
         switch (view.getId()){
             case R.id.eightQuestions:
                 gameSettings.edit().putInt("numberOfQuestions", 8).apply();
@@ -95,6 +100,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void buttonPressed(View view){
+        //Returns to the pre game activity
         Intent goToPreGame = new Intent (this, PreGameActivity.class);
         startActivity(goToPreGame);
     }

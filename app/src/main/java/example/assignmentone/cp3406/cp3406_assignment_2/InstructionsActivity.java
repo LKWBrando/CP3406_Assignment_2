@@ -1,3 +1,4 @@
+//InstructionsActivity created to display the structure and rules of the game
 package example.assignmentone.cp3406.cp3406_assignment_2;
 
 import android.content.Intent;

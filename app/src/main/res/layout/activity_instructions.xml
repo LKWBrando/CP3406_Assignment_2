@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,6 +11,7 @@
     android:background="#262626"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.InstructionsActivity">
 
+    <!--Displaying Instructions header-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +23,7 @@
         android:textColor="#ba2d0b"
         android:text="How to play the game"/>
 
+    <!--Sub text for instruction texts-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,6 +34,7 @@
         android:padding="15dp"
         android:text="To start, select the topic that you want to be quizzed on."/>
 
+    <!--Sub text for instruction texts-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +45,7 @@
         android:padding="15dp"
         android:text="You will be able to choose the time given per question, as well as the number of questions in the quiz"/>
 
+    <!--Sub text for instruction texts-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +56,7 @@
         android:padding="15dp"
         android:text="For each question in the quiz, there is a time limit in which you have to pick an answer to the question."/>
 
-
+    <!--Sub text for instruction texts-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,6 +67,7 @@
         android:padding="15dp"
         android:text="Score points when you pick the correct answer! The faster you answer correctly, the more points you get!"/>
 
+    <!--Sub text for instruction texts-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,6 +78,7 @@
         android:padding="15dp"
         android:text="Stuck? You will be able to skip a few questions (Based on number of questions.) \nSimply tilt your phone to the left or right."/>
 
+    <!--Sub text for instruction texts-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,6 +89,7 @@
         android:padding="15dp"
         android:text="You will be able to save your score at the end, and even post it onto Twitter to show off to your friends!"/>
 
+    <!--Sub text for instruction texts-->
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"

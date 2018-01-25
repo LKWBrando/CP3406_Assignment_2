@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,6 +10,7 @@
     android:background="@drawable/test_bg"
     tools:context="example.assignmentone.cp3406.cp3406_assignment_2.MainActivity">
 
+    <!--Displays the Application's name-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,8 +21,9 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_weight="6"
-        android:text="Think \nScience!"/>
+        android:text="Quick \nScience!"/>
 
+    <!--Button to start the play process-->
     <Button
         android:id="@+id/playButton"
         android:layout_width="150dp"
@@ -33,6 +36,7 @@
         android:layout_marginTop="100dp"
         android:text="Play"/>
 
+    <!--Button to display the Instructions screen-->
     <Button
         android:id="@+id/instructionsButton"
         android:layout_width="150dp"
@@ -45,6 +49,7 @@
         android:layout_marginTop="5dp"
         android:text="Instructions"/>
 
+    <!--Button to display the High scores screen-->
     <Button
         android:id="@+id/highScoreButton"
         android:layout_width="150dp"
